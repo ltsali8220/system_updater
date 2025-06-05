@@ -1,4 +1,5 @@
-﻿# system_updater
+# system_updater
+
 ## 🛠️ Cross-Platform System Updater Tool
 
 A Python-based controller that automates system updates on both **Windows** and **Linux** environments (including desktops and servers) using platform-specific scripts written in **Bash** and **PowerShell**.
@@ -22,29 +23,23 @@ The `updater.py` script detects the host operating system and runs the correspon
 - On **Linux** → Executes `update_linux.sh`
 - On **Windows** → Executes `update_windows.ps1`
 
-Each script uses native package managers (APT, YUM, Pacman) or the Windows Update module.
+Each script uses the native package managers (APT, YUM, Pacman) or the Windows Update module.
 
 ---
-
 
 ## 🗂️ Project Structure
 
+```
 system_updater/
-├── updater.py # Main Python controller script
+├── updater.py                 # Main Python controller script
 ├── scripts/
-│ ├── update_linux.sh # Bash script for Linux updates
-│ └── update_windows.ps1 # PowerShell script for Windows updates
+│   ├── update_linux.sh        # Bash script for Linux updates
+│   └── update_windows.ps1     # PowerShell script for Windows updates
 ├── logs/
-│ └── updater.log # Log file for updates
+│   └── updater.log            # Log file for updates
 └── config/
-└── updater_config.json (optional for future customization)
-
-yaml
-Copy
-Edit
-
----
-
+    └── updater_config.json    # (Optional for future customization)
+```
 
 ---
 
@@ -58,79 +53,89 @@ Install Python dependencies (if needed):
 
 ```bash
 pip install -r requirements.txt
+```
 
-##Linux
-Bash shell
+### Linux
+- Bash shell
+- Sudo privileges
 
-Sudo privileges
-
-Windows
-PowerShell 5.1+
-
-Administrator privileges
-
-Internet access to install PSWindowsUpdate if not already installed
-
-🛠️ Usage
-1. Clone the Repository
-bash
-Copy
-Edit
-git clone https://github.com/ltsali8220/system_updater.git
-cd system_updater
-2. Run the Updater
-bash
-Copy
-Edit
-python updater.py
-✅ The script will automatically detect the OS and execute the correct update procedure.
-
-📄 Example Output
-Check the log file:
-
-bash
-Copy
-Edit
-cat logs/updater.log
-🔐 Permissions
-Make sure scripts are executable and run with appropriate privileges.
-
-Linux:
-
-bash
-Copy
-Edit
-chmod +x scripts/update_linux.sh
-sudo python updater.py
-Windows (Run as Administrator):
-
-powershell
-Copy
-Edit
-python updater.py
-🔧 Future Improvements (Planned)
-Configurable scheduling (cron / Task Scheduler)
-
-Remote update capabilities via SSH/WinRM
-
-GUI interface (Tkinter or web-based)
-
-Email notifications or reporting
-
-🤝 Contributing
-Pull requests and suggestions are welcome! Please open an issue first to discuss changes.
-
-📜 License
-MIT License. See LICENSE for details.
-
-👨‍💻 Author
-Developed by Salivan Veerasekaran
-GitHub Repository: https://github.com/ltsali8220/system_updater
-
-yaml
-Copy
-Edit
+### Windows
+- PowerShell 5.1+
+- Administrator privileges
+- Internet access to install PSWindowsUpdate if not already installed
 
 ---
 
-Would you like me to generate the `LICENSE`, `.gitignore`, or `requirements.txt` f
+## 🛠️ Usage
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/ltsali8220/system_updater.git
+cd system_updater
+```
+
+### 2. Run the Updater
+
+```bash
+python updater.py
+```
+
+✅ The script will automatically detect the OS and execute the correct update procedure.
+
+---
+
+## 📄 Example Output
+
+Check the log file:
+
+```bash
+cat logs/updater.log
+```
+
+---
+
+## 🔐 Permissions
+
+Make sure scripts are executable and run with appropriate privileges.
+
+### Linux:
+
+```bash
+chmod +x scripts/update_linux.sh
+sudo python updater.py
+```
+
+### Windows (Run as Administrator):
+
+```powershell
+python updater.py
+```
+
+---
+
+## 🔧 Future Improvements (Planned)
+
+- Configurable scheduling (cron / Task Scheduler)
+- Remote update capabilities via SSH/WinRM
+- GUI interface (Tkinter or web-based)
+- Email notifications or reporting
+
+---
+
+## 🤝 Contributing
+
+Pull requests and suggestions are welcome! Please open an issue first to discuss changes.
+
+---
+
+## 📜 License
+
+MIT License. See LICENSE for details.
+
+---
+
+## 👨‍💻 Author
+
+Developed by Salivan Veerasekaran  
+GitHub Repository: [https://github.com/ltsali8220/system_updater](https://github.com/ltsali8220/system_updater)
